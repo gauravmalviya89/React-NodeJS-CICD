@@ -23,3 +23,9 @@ jobs:
         cd frontend
         npm i
         npm run build
+    
+    - uses: akhileshns/heroku-deploy@v3.12.12
+      with:
+        heroku_api_key: ${{secrets.HEROKU_API_KEY_GM}}
+        heroku_app_name: ${{secrets.HEROKU_APP_NAME_GM}} #Must be unique in Heroku
+        heroku_email: ${{secrets.HEROKU_EMAIL_GM}}
